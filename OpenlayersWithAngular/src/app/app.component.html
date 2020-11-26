@@ -1,0 +1,22 @@
+<app-map (newItemEvent)="addItem($event)"></app-map>
+<div class="container">
+  <div class="header">
+    <div>Coordinate</div>
+    <div>Location Name</div>
+    <div>Address</div>
+    <div>Telephone</div>
+  </div>
+  <hr>
+
+  <div class="infoAndCoord">
+    <!-- <div class=coordinate *ngFor="let item of items">Coordinate: {{item}}   </div> -->
+    <div class="info" *ngFor="let info of infos"> {{info}} </div>
+  </div>
+</div>
+
+<div *ngIf="trueOrFalse" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <app-modal (newItemE)="addInfos($event)"></app-modal>
+  </div>
+</div>
